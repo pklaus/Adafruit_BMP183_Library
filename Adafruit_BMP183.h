@@ -75,6 +75,7 @@ class Adafruit_BMP183 {
   float getTemperature(void);
   int32_t getPressure(void);
   float getAltitude(float sealevelPressure = 101325); // std atmosphere
+  float getSealevelPressure(float altitude);
   uint16_t readRawTemperature(void);
   uint32_t readRawPressure(void);
   

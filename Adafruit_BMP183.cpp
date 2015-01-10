@@ -269,6 +269,16 @@ float Adafruit_BMP183::getAltitude(float sealevelPressure) {
   return altitude;
 }
 
+float Adafruit_BMP183::getSealevelPressure(float altitude) {
+  float sealevelPressure;
+
+  float pressure = getPressure();
+  pressure /= 100;
+
+  sealevelPressure = pressure / pow(1. - (altitude / 44330.), 5.255);
+
+  return sealevelPressure;
+}
 
 /*********************************************************************/
 
